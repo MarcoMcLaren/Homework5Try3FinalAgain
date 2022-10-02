@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<Homework5Try3.Models.borrows>
+
 <br />
-<h1></h1>
-<h1>#@ViewBag.BookId  @ViewBag.BookName</h1>
+
+<h2>#@ViewBag.BookId @ViewBag.BookName</h2>
 <h2 id="displayBorrowsAmount"></h2>
-@Html.ActionLink("Students", "Index", "Student", new { bookid = ViewBag.BookId, bookName = ViewBag.BookName}, new { @class = "btn btn-primary" })
 <br />
+@Html.ActionLink("Students", "Index", "Student", new { bookid = ViewBag.BookId, bookName = ViewBag.BookName }, new { @class = "btn btn-primary" })
 <table class="table" id="tableID">
     <tr>
         <th>
@@ -45,3 +46,4 @@
     console.log(rowCount);
     document.getElementById("displayBorrowsAmount").innerHTML = "# Borrows - " + rowCount;
 </script>
+

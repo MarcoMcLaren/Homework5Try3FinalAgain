@@ -8,19 +8,17 @@ using Service = Homework5Try3.Models.Service;
 
 namespace Homework5Try3.Controllers
 {
-    public class BorrowedController : Controller
+    public class BorrowBookController : Controller
     {
         private Service dataService = new Service();
-        // GET: Borrowed
+        // GET: BorrowBook
         [HttpGet]
-        public ActionResult Index(int id, string name)
+        public ActionResult Index(int bookId, string bookName)
         {
-            ViewBag.BookName = name;
-            ViewBag.BookId = id;
-            var borrows = dataService.getAllBorrows(id).ToList();
+            ViewBag.BookName = bookName;
+            ViewBag.BookId = bookId;
+            var borrows = dataService.getAllBorrows(bookId).ToList();
             return View(borrows);
         }
-
-
     }
 }
